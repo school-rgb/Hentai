@@ -1191,11 +1191,11 @@
         return ANILIST_POSTER_API(item._anilistId);
       }
       if (item.poster_path) {
-        return `https://image.tmdb.org/t/p/w500${item.poster_path}`;
+        return `https://ani.pm/api/hen/k7/img?u=${item.poster_path}`;
       }
       // Fallback to banner if poster missing
       if (item.backdrop_path) {
-        return `https://image.tmdb.org/t/p/w780${item.backdrop_path}`;
+        return `https://ani.pm/api/hen/k7/img?u=${item.backdrop_path}`;
       }
       // Fallback to first letter of title if neither exists
       return getInitialLetterPlaceholder(item.name || item.title);
