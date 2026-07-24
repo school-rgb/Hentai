@@ -1122,7 +1122,7 @@
 
   <script>
     const API_KEY = '3a73619bbb8fc6d47742d1b5b2b707b5';
-    const BASE = 'https://api.themoviedb.org/3';
+    const BASE = 'https://ani.pm/api/hen/k7/img?u=';
 
     /* Disclaimer Logic */
     function checkDisclaimer() {
@@ -1203,14 +1203,14 @@
 
     function getBannerUrl(item) {
       if (item.backdrop_path) {
-        return `https://image.tmdb.org/t/p/w1280${item.backdrop_path}`;
+        return `https://ani.pm/api/hen/k7/img?u=${item.backdrop_path}`;
       }
       // Fallback to poster if banner missing
       if (item._anilistId) {
         return ANILIST_POSTER_API(item._anilistId);
       }
       if (item.poster_path) {
-        return `https://image.tmdb.org/t/p/w500${item.poster_path}`;
+        return `https://ani.pm/api/hen/k7/img?u=${item.poster_path}`;
       }
       // Fallback to first letter of title if neither exists
       return getInitialLetterPlaceholder(item.name || item.title, true);
