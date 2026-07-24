@@ -202,99 +202,6 @@
       opacity: 0.6;
     }
 
-    /* Dedicated Search Modal UI */
-    .search-modal-backdrop {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(12, 12, 15, 0.96);
-      backdrop-filter: blur(8px);
-      z-index: 10000;
-      flex-direction: column;
-    }
-
-    .search-modal-header {
-      padding: 20px 36px;
-      border-bottom: 1px solid #2a2a30;
-      background-color: #18181c;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      justify-content: space-between;
-    }
-
-    .search-modal-bar {
-      display: flex;
-      align-items: center;
-      flex: 1;
-      max-width: 700px;
-      background-color: #222226;
-      border: 1px solid #3a3a42;
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    .search-modal-input {
-      width: 100%;
-      padding: 12px 18px;
-      border: none;
-      background: transparent;
-      color: #ffffff;
-      font-size: 1.05rem;
-      outline: none;
-      font-family: inherit;
-    }
-
-    .search-modal-close-btn {
-      background: #28282d;
-      border: 1px solid #3a3a42;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .search-modal-close-btn:hover {
-      background-color: #323238;
-      border-color: #4a4a52;
-    }
-
-    .search-modal-body {
-      flex: 1;
-      padding: 30px 36px;
-      overflow-y: auto;
-    }
-
-    .search-status-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: #d0d0d8;
-    }
-
-    .search-grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-      gap: 20px;
-    }
-
-    /* Type Badge */
-    .badge-type {
-      background-color: #ff6600;
-      color: #ffffff;
-      font-size: 0.65rem;
-      font-weight: 800;
-      padding: 2px 5px;
-      border-radius: 3px;
-      text-transform: uppercase;
-    }
-
     /* Huge Featured Hero Banner */
     .huge-hero-container {
       position: relative;
@@ -481,12 +388,6 @@
       cursor: pointer;
       overflow: hidden;
       flex-shrink: 0;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: #ff6600;
     }
 
     .card-thumbnail-wrapper {
@@ -531,7 +432,6 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      flex-wrap: wrap;
     }
 
     /* Rating Badges */
@@ -544,8 +444,6 @@
     }
 
     .badge-mature { background-color: #381216; color: #ff4d4d; }
-    .badge-teen { background-color: #332412; color: #ffaa33; }
-    .badge-general { background-color: #122c38; color: #33ccff; }
 
     /* Modal Backdrop */
     .modal-backdrop {
@@ -556,7 +454,7 @@
       width: 100vw;
       height: 100vh;
       background-color: rgba(0, 0, 0, 0.85);
-      z-index: 15000;
+      z-index: 9000;
       justify-content: center;
       align-items: center;
       padding: 20px;
@@ -753,7 +651,7 @@
       width: 100vw;
       height: 100vh;
       background-color: #0c0c0e;
-      z-index: 25000;
+      z-index: 9999;
       padding: 20px;
       overflow-y: auto;
     }
@@ -770,7 +668,7 @@
       padding: 8px 16px;
       border-radius: 4px;
       cursor: pointer;
-      z-index: 26000;
+      z-index: 10000;
     }
 
     .layout-container {
@@ -964,12 +862,6 @@
       .huge-hero-desc {
         display: none;
       }
-      .search-modal-header {
-        padding: 16px;
-      }
-      .search-modal-body {
-        padding: 16px;
-      }
     }
   </style>
 </head>
@@ -981,21 +873,12 @@
         <h2>Content Rating & Advisory Notice</h2>
       </div>
       <div id="disclaimer-content" class="disclaimer-content" onscroll="handleDisclaimerScroll()">
-        <p>Welcome to <strong>AnimeHub</strong>! Please take a moment to review our content rating guidelines before proceeding. Anime titles vary widely in themes, age-appropriateness, and parental guidance levels.</p>
+        <p>Welcome to <strong>AnimeHub</strong>! Please take a moment to review our content rating guidelines before proceeding.</p>
 
-        <h3>General & TV-G / PG (All Ages)</h3>
-        <p>Suitable for general audiences. Contains minimal or light action, mild humor, and no inappropriate themes or strong language.</p>
+        <h3>Rated R / TV-MA / NC-17 (Mature Audiences Only)</h3>
+        <p>This catalog exclusively displays content intended for mature audiences (ages 17+ or 18+). Titles may contain intense violence, explicit themes, strong language, or psychological horror.</p>
 
-        <h3>PG-13 / TV-14 (Parents Strongly Cautioned)</h3>
-        <p>May contain content unsuitable for children under 13 or 14 years old. Themes may include moderate violence, mild profanity, suggestive dialogue, or fantasy battle sequences.</p>
-
-        <h3>Rated R / TV-MA (Mature Audiences)</h3>
-        <p>Intended for mature audiences (ages 17+ or 18+). May contain intense graphic violence, strong coarse language, blood/gore, psychological horror, or explicit themes.</p>
-
-        <h3>NC-17 / Adult Content</h3>
-        <p>Strictly restricted to adults aged 18 and older. Contains explicit adult themes. Note that adult/explicit content is automatically filtered out on AnimeHub.</p>
-
-        <p><em>By clicking "I Understand & Agree" below, you acknowledge that you have read and understood these content ratings and agree to view content appropriate for your age group or jurisdiction.</em></p>
+        <p><em>By clicking "I Understand & Agree" below, you acknowledge that you are of legal age to view mature-rated content.</em></p>
       </div>
       <div class="disclaimer-footer">
         <span id="disclaimer-scroll-hint" class="disclaimer-scroll-hint">Scroll to the bottom to acknowledge</span>
@@ -1013,24 +896,10 @@
     </div>
     
     <div class="search-container">
-      <input type="text" id="anime-search-input" class="search-input" placeholder="Search anime series or movies..." onkeyup="handleSearchKey(event)" />
+      <input type="text" id="anime-search-input" class="search-input" placeholder="Search mature anime series or movies..." onkeyup="handleSearchKey(event)" />
       <button class="search-btn" onclick="executeAnimeSearch()">Search</button>
     </div>
   </header>
-
-  <div id="search-modal" class="search-modal-backdrop">
-    <div class="search-modal-header">
-      <div class="search-modal-bar">
-        <input type="text" id="modal-search-input" class="search-modal-input" placeholder="Search for anime titles or movies..." oninput="handleModalSearchInput()" onkeyup="handleModalSearchKey(event)" />
-      </div>
-      <button class="search-modal-close-btn" onclick="closeSearchModal()">Close</button>
-    </div>
-    <div class="search-modal-body">
-      <div id="search-status-title" class="search-status-title">Search Results</div>
-      <div id="search-grid-container" class="search-grid-container">
-        </div>
-    </div>
-  </div>
 
   <div id="huge-hero" class="huge-hero-container">
     <div class="huge-hero-overlay"></div>
@@ -1041,7 +910,7 @@
         <span id="huge-hero-rating">★ --</span>
         <span id="huge-hero-badge"></span>
       </div>
-      <p id="huge-hero-desc" class="huge-hero-desc">Discover top trending series, films, and favorites right here on AnimeHub.</p>
+      <p id="huge-hero-desc" class="huge-hero-desc">Discover top trending mature anime titles right here on AnimeHub.</p>
       <div class="huge-hero-actions">
         <button id="huge-hero-watch-btn" class="btn-hero-watch" onclick="openFeaturedWatch()">Watch Now</button>
         <button id="huge-hero-info-btn" class="btn-hero-info" onclick="openFeaturedInfo()">More Details</button>
@@ -1122,7 +991,7 @@
 
   <script>
     const API_KEY = '3a73619bbb8fc6d47742d1b5b2b707b5';
-    const BASE = 'https://ani.pm/api/hen/k7/img?u=';
+    const BASE = 'https://api.themoviedb.org/3';
 
     /* Disclaimer Logic */
     function checkDisclaimer() {
@@ -1159,17 +1028,15 @@
     
     // Categories for Home View
     const CATEGORIES = [
-      { name: "Popular This Season", type: "tv", endpoint: "discover/tv", params: "&with_genres=16&with_origin_country=JP&sort_by=popularity.desc&first_air_date.gte=2024-01-01" },
-      { name: "Top Airing Anime", type: "tv", endpoint: "discover/tv", params: "&with_genres=16&with_origin_country=JP&sort_by=popularity.desc&with_status=2" },
-      { name: "All-Time Favorites", type: "tv", endpoint: "discover/tv", params: "&with_genres=16&with_origin_country=JP&sort_by=vote_average.desc&vote_count.gte=300" },
-      { name: "Action Anime", type: "tv", endpoint: "discover/tv", params: "&with_genres=16,10759&with_origin_country=JP&sort_by=popularity.desc" },
-      { name: "Anime Movies", type: "movie", endpoint: "discover/movie", params: "&with_genres=16&with_original_language=ja&sort_by=popularity.desc" },
-      { name: "Fantasy & Isekai", type: "tv", endpoint: "discover/tv", params: "&with_genres=16,10765&with_origin_country=JP&sort_by=popularity.desc" },
-      { name: "Slice of Life & Comedy", type: "tv", endpoint: "discover/tv", params: "&with_genres=16,35&with_origin_country=JP&sort_by=popularity.desc" },
-      { name: "Romance Anime", type: "tv", endpoint: "discover/tv", params: "&with_genres=16,10749&with_origin_country=JP&sort_by=popularity.desc" }
+      { name: "Popular Mature Anime", type: "tv", endpoint: "discover/tv", params: "&with_genres=16&with_origin_country=JP&sort_by=popularity.desc" },
+      { name: "Top Rated Mature Series", type: "tv", endpoint: "discover/tv", params: "&with_genres=16&with_origin_country=JP&sort_by=vote_average.desc&vote_count.gte=100" },
+      { name: "Action & Violent Anime", type: "tv", endpoint: "discover/tv", params: "&with_genres=16,10759&with_origin_country=JP&sort_by=popularity.desc" },
+      { name: "Mature Anime Movies", type: "movie", endpoint: "discover/movie", params: "&with_genres=16&with_original_language=ja&sort_by=popularity.desc" },
+      { name: "Dark Fantasy & Horror", type: "tv", endpoint: "discover/tv", params: "&with_genres=16,10765&with_origin_country=JP&sort_by=popularity.desc" }
     ];
 
-    const ANILIST_POSTER_API = id => `https://ani.pm/api/hen/k7/img?u=${id}`;
+    /* Updated Image API Endpoint */
+    const NEW_IMAGE_API = id => `https://ani.pm/api/hen/k7/img?u=${id}`;
 
     /* Image Fallback System */
     function getInitialLetterPlaceholder(title, isBanner = false) {
@@ -1186,37 +1053,35 @@
       return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
     }
 
+    /* Poster Logic with New Image API */
     function getPosterUrl(item) {
       if (item._anilistId) {
-        return ANILIST_POSTER_API(item._anilistId);
+        return NEW_IMAGE_API(item._anilistId);
       }
       if (item.poster_path) {
-        return `https://ani.pm/api/hen/k7/img?u=${item.poster_path}`;
+        return `https://image.tmdb.org/t/p/w500${item.poster_path}`;
       }
-      // Fallback to banner if poster missing
       if (item.backdrop_path) {
-        return `https://ani.pm/api/hen/k7/img?u=${item.backdrop_path}`;
+        return `https://image.tmdb.org/t/p/w780${item.backdrop_path}`;
       }
-      // Fallback to first letter of title if neither exists
       return getInitialLetterPlaceholder(item.name || item.title);
     }
 
     function getBannerUrl(item) {
       if (item.backdrop_path) {
-        return `https://ani.pm/api/hen/k7/img?u=${item.backdrop_path}`;
+        return `https://image.tmdb.org/t/p/w1280${item.backdrop_path}`;
       }
-      // Fallback to poster if banner missing
       if (item._anilistId) {
-        return ANILIST_POSTER_API(item._anilistId);
+        return NEW_IMAGE_API(item._anilistId);
       }
       if (item.poster_path) {
-        return `https://ani.pm/api/hen/k7/img?u=${item.poster_path}`;
+        return `https://image.tmdb.org/t/p/w500${item.poster_path}`;
       }
-      // Fallback to first letter of title if neither exists
       return getInitialLetterPlaceholder(item.name || item.title, true);
     }
 
-    const EXCLUDED_RATINGS = ['TV-14', 'PG-13', 'TV-PG', 'PG', 'TV-G'];
+    /* Target ratings: ONLY R, NC-17, and TV-MA */
+    const ALLOWED_RATINGS = ['R', 'NC-17', 'TV-MA'];
     const TITLE_BLACKLIST = ['bad anime title 1', 'example title to hide'];
 
     const TV_SOURCES = [
@@ -1238,14 +1103,12 @@
     let currentMovieId = null;
     let allEpisodes = [];
     let seasonDataMap = {};
-    let searchDebounceTimeout = null;
 
     async function loadHomePage() {
       document.getElementById('anime-search-input').value = '';
       const homeContainer = document.getElementById('home-categories-container');
       homeContainer.innerHTML = '';
 
-      // Initialize sections for all categories
       CATEGORIES.forEach((cat, idx) => {
         const sec = document.createElement('div');
         sec.className = 'category-section';
@@ -1260,9 +1123,8 @@
         homeContainer.appendChild(sec);
       });
 
-      // Fetch each category in parallel
       CATEGORIES.forEach((cat, idx) => {
-        const url = `${BASE}/${cat.endpoint}?api_key=${API_KEY}${cat.params}&include_adult=false`;
+        const url = `${BASE}/${cat.endpoint}?api_key=${API_KEY}${cat.params}&include_adult=true`;
         fetchCategoryData(url, idx, cat.type === 'movie');
       });
     }
@@ -1289,14 +1151,16 @@
           anime._contentRating = rating;
 
           const ratingUpper = (anime._contentRating || '').toUpperCase();
-          const isBlocked = EXCLUDED_RATINGS.some(excluded => ratingUpper.includes(excluded.toUpperCase()));
+          const isMatureAllowed = ALLOWED_RATINGS.some(allowed => ratingUpper.includes(allowed.toUpperCase()));
 
-          if (!isBlocked) {
+          if (isMatureAllowed) {
+            const aniId = await fetchAniListId(anime.name);
+            if (aniId) anime._anilistId = aniId;
+
             filteredList.push(anime);
           }
         }
 
-        // Set top item of first category as Featured Hero Spotlight
         if (categoryIndex === 0 && filteredList.length > 0 && !featuredAnime) {
           updateHugeHeroBanner(filteredList[0]);
         }
@@ -1313,7 +1177,7 @@
     function renderCategoryRow(container, list) {
       container.innerHTML = '';
       if (!list || list.length === 0) {
-        container.innerHTML = '<div style="color: #888; font-size: 0.85rem; padding: 10px 0;">No items available.</div>';
+        container.innerHTML = '<div style="color: #888; font-size: 0.85rem; padding: 10px 0;">No mature titles found in this section.</div>';
         return;
       }
 
@@ -1349,8 +1213,8 @@
 
       document.getElementById('huge-hero-title').innerText = anime.name;
       document.getElementById('huge-hero-rating').innerText = `★ ${anime.vote_average ? anime.vote_average.toFixed(1) : 'N/A'}`;
-      document.getElementById('huge-hero-badge').innerHTML = createRatingBadgeHtml(anime._contentRating || 'TV-14');
-      document.getElementById('huge-hero-desc').innerText = anime.overview || 'Discover top trending series, films, and favorites right here on AnimeHub.';
+      document.getElementById('huge-hero-badge').innerHTML = createRatingBadgeHtml(anime._contentRating || 'TV-MA');
+      document.getElementById('huge-hero-desc').innerText = anime.overview || 'Discover top trending mature anime titles right here on AnimeHub.';
     }
 
     function openFeaturedWatch() {
@@ -1371,134 +1235,30 @@
       }
     }
 
-    /* SEARCH FEATURE FUNCTIONS */
     function handleSearchKey(event) {
       if (event.key === 'Enter') {
         executeAnimeSearch();
       }
     }
 
-    function handleModalSearchKey(event) {
-      if (event.key === 'Enter') {
-        performModalSearch(document.getElementById('modal-search-input').value.trim());
-      }
-    }
-
-    function handleModalSearchInput() {
-      clearTimeout(searchDebounceTimeout);
-      const query = document.getElementById('modal-search-input').value.trim();
-      searchDebounceTimeout = setTimeout(() => {
-        performModalSearch(query);
-      }, 500);
-    }
-
-    function executeAnimeSearch() {
+    async function executeAnimeSearch() {
       const query = document.getElementById('anime-search-input').value.trim();
-      document.getElementById('modal-search-input').value = query;
-      document.getElementById('search-modal').style.display = 'flex';
-      performModalSearch(query);
-    }
+      if (!query) return;
 
-    function closeSearchModal() {
-      document.getElementById('search-modal').style.display = 'none';
-    }
-
-    async function performModalSearch(query) {
-      const gridContainer = document.getElementById('search-grid-container');
-      const statusTitle = document.getElementById('search-status-title');
-
-      if (!query) {
-        statusTitle.innerText = 'Please enter a search query.';
-        gridContainer.innerHTML = '';
-        return;
-      }
-
-      statusTitle.innerText = `Searching for "${query}"...`;
-      gridContainer.innerHTML = '<div style="color: #888; font-size: 0.95rem; grid-column: 1 / -1;">Loading results...</div>';
-
-      try {
-        const tvUrl = `${BASE}/search/tv?api_key=${API_KEY}&query=${encodeURIComponent(query)}&include_adult=false`;
-        const movieUrl = `${BASE}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}&include_adult=false`;
-
-        const [tvRes, movieRes] = await Promise.all([fetch(tvUrl), fetch(movieUrl)]);
-        const tvData = await tvRes.json();
-        const movieData = await movieRes.json();
-
-        const tvResults = (tvData.results || []).map(item => ({ ...item, _isMovie: false, name: item.name || item.original_name }));
-        const movieResults = (movieData.results || []).map(item => ({ ...item, _isMovie: true, name: item.title || item.original_title }));
-
-        let combinedResults = [...tvResults, ...movieResults];
-
-        combinedResults = combinedResults.filter(item => {
-          const isAnimation = item.genre_ids ? item.genre_ids.includes(16) : true;
-          const titleLower = (item.name || '').toLowerCase();
-          const notBlacklisted = !TITLE_BLACKLIST.some(blocked => titleLower.includes(blocked.toLowerCase()));
-          return isAnimation && notBlacklisted;
-        });
-
-        // Sort results by popularity
-        combinedResults.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
-
-        const finalResults = [];
-        for (const item of combinedResults) {
-          const rating = await fetchContentRating(item.id, item._isMovie);
-          item._contentRating = rating;
-
-          const ratingUpper = (rating || '').toUpperCase();
-          const isBlocked = EXCLUDED_RATINGS.some(excluded => ratingUpper.includes(excluded.toUpperCase()));
-
-          if (!isBlocked) {
-            finalResults.push(item);
-          }
-        }
-
-        statusTitle.innerText = `Results for "${query}" (${finalResults.length})`;
-        renderSearchGrid(gridContainer, finalResults);
-
-      } catch (e) {
-        console.error('Search Error:', e);
-        statusTitle.innerText = `Error carrying out search.`;
-        gridContainer.innerHTML = '<div style="color: #ff6600; grid-column: 1 / -1;">An error occurred while fetching results.</div>';
-      }
-    }
-
-    function renderSearchGrid(container, results) {
-      container.innerHTML = '';
-      if (!results || results.length === 0) {
-        container.innerHTML = '<div style="color: #aaa; grid-column: 1 / -1; padding: 20px 0;">No matching anime titles found. Try another query!</div>';
-        return;
-      }
-
-      results.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.onclick = () => {
-          if (item._isMovie) {
-            openMovieHeroModal(item);
-          } else {
-            openHeroModal(item);
-          }
-        };
-
-        const badgeHtml = createRatingBadgeHtml(item._contentRating);
-        const posterSrc = getPosterUrl(item);
-        const typeBadge = `<span class="badge-type">${item._isMovie ? 'Movie' : 'Series'}</span>`;
-
-        card.innerHTML = `
-          <div class="card-thumbnail-wrapper">
-            <img src="${posterSrc}" alt="${item.name}" loading="lazy" />
+      const homeContainer = document.getElementById('home-categories-container');
+      homeContainer.innerHTML = `
+        <div class="category-section">
+          <div class="category-header">
+            <h2 class="category-title">Search Results for "${query}"</h2>
           </div>
-          <div class="card-info">
-            <h3 class="card-title">${item.name}</h3>
-            <div class="card-meta">
-              <span>★ ${item.vote_average ? item.vote_average.toFixed(1) : 'N/A'}</span>
-              ${typeBadge}
-              ${badgeHtml}
-            </div>
+          <div class="row-scroll-container" id="search-results-row">
+            <div style="color: #888; font-size: 0.9rem; padding: 20px 0;">Searching...</div>
           </div>
-        `;
-        container.appendChild(card);
-      });
+        </div>
+      `;
+
+      const searchUrl = `${BASE}/search/tv?api_key=${API_KEY}&query=${encodeURIComponent(query)}&include_adult=true`;
+      fetchCategoryData(searchUrl, 'results-row', false);
     }
 
     async function fetchAniListId(title) {
@@ -1534,17 +1294,7 @@
 
     function createRatingBadgeHtml(ratingText) {
       if (!ratingText) return '';
-      
-      const text = ratingText.toUpperCase();
-      let badgeClass = 'badge-general';
-
-      if (text.includes('MA') || text.includes('R') || text.includes('18')) {
-        badgeClass = 'badge-mature';
-      } else if (text.includes('14') || text.includes('13') || text.includes('PG-13')) {
-        badgeClass = 'badge-teen';
-      }
-
-      return `<span class="rating-badge ${badgeClass}">${ratingText}</span>`;
+      return `<span class="rating-badge badge-mature">${ratingText}</span>`;
     }
 
     async function fetchContentRating(id, isMovie = false) {
@@ -1557,27 +1307,32 @@
           const usRelease = (data.results || []).find(r => r.iso_3166_1 === 'US');
           if (usRelease && usRelease.release_dates) {
             const cert = usRelease.release_dates.find(d => d.certification);
-            return cert ? cert.certification : 'PG-13';
+            return cert ? cert.certification : 'R';
           }
-          return 'PG-13';
+          return 'R';
         } else {
           if (data.results && data.results.length > 0) {
             const ratingObj = data.results.find(r => r.iso_3166_1 === 'US') || 
                               data.results.find(r => r.iso_3166_1 === 'JP') || 
                               data.results[0];
-            return ratingObj.rating || 'TV-14';
+            return ratingObj.rating || 'TV-MA';
           }
         }
       } catch (e) {
         console.error('Error fetching rating:', e);
       }
-      return isMovie ? 'PG-13' : 'TV-14';
+      return isMovie ? 'R' : 'TV-MA';
     }
 
     /* Open Series Menu Modal */
     async function openHeroModal(anime) {
       currentAnime = anime;
       selectedMovie = null;
+
+      if (!anime._anilistId) {
+        const aniId = await fetchAniListId(anime.name);
+        if (aniId) anime._anilistId = aniId;
+      }
 
       const bannerUrl = getBannerUrl(anime);
       const initialPosterUrl = getPosterUrl(anime);
@@ -1586,7 +1341,7 @@
       document.getElementById('hero-poster-img').src = initialPosterUrl;
       document.getElementById('hero-title-text').innerText = anime.name;
       document.getElementById('hero-rating-text').innerText = `★ ${anime.vote_average ? anime.vote_average.toFixed(1) : 'N/A'}`;
-      document.getElementById('hero-badge-container').innerHTML = createRatingBadgeHtml(anime._contentRating || 'TV-14');
+      document.getElementById('hero-badge-container').innerHTML = createRatingBadgeHtml(anime._contentRating || 'TV-MA');
       document.getElementById('hero-description-text').innerText = anime.overview || 'No overview available.';
       
       document.getElementById('hero-seasons-badge').innerText = 'Loading...';
@@ -1598,19 +1353,17 @@
       document.getElementById('hero-backdrop').style.display = 'flex';
       document.body.style.overflow = 'hidden';
 
-      fetchAniListId(anime.name).then(aniId => {
-        if (aniId) {
-          anime._anilistId = aniId;
-          document.getElementById('hero-poster-img').src = getPosterUrl(anime);
-        }
-      });
-
       await fetchDetailedAnimeInfo(anime);
     }
 
-    /* Open Movie Menu Modal on Movie Click */
-    function openMovieHeroModal(movie) {
+    /* Open Movie Menu Modal */
+    async function openMovieHeroModal(movie) {
       selectedMovie = movie;
+
+      if (!movie._anilistId) {
+        const aniId = await fetchAniListId(movie.title || movie.name || movie.original_title);
+        if (aniId) movie._anilistId = aniId;
+      }
 
       const bannerUrl = getBannerUrl(movie);
       const initialPosterUrl = getPosterUrl(movie);
@@ -1619,7 +1372,7 @@
       document.getElementById('hero-poster-img').src = initialPosterUrl;
       document.getElementById('hero-title-text').innerText = movie.title || movie.name || movie.original_title;
       document.getElementById('hero-rating-text').innerText = `★ ${movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A'}`;
-      document.getElementById('hero-badge-container').innerHTML = createRatingBadgeHtml(movie._contentRating || (movie.adult ? '18+' : 'PG-13'));
+      document.getElementById('hero-badge-container').innerHTML = createRatingBadgeHtml(movie._contentRating || 'R');
       document.getElementById('hero-description-text').innerText = movie.overview || 'No overview available.';
       
       document.getElementById('hero-seasons-badge').innerText = 'Movie';
@@ -1661,14 +1414,17 @@
       moviesSection.style.display = 'none';
 
       try {
-        const res = await fetch(`${BASE}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(animeTitle)}&include_adult=false`);
+        const res = await fetch(`${BASE}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(animeTitle)}&include_adult=true`);
         const data = await res.json();
 
         const movies = (data.results || []).filter(m => m.original_language === 'ja' || (m.genre_ids && m.genre_ids.includes(16))).slice(0, 5);
 
         if (movies.length > 0) {
           moviesSection.style.display = 'flex';
-          movies.forEach(movie => {
+          for (const movie of movies) {
+            const aniId = await fetchAniListId(movie.title);
+            if (aniId) movie._anilistId = aniId;
+
             const card = document.createElement('div');
             card.className = 'movie-card';
             card.onclick = () => openMovieHeroModal(movie);
@@ -1677,7 +1433,7 @@
               <div class="movie-card-title">${movie.title}</div>
             `;
             moviesList.appendChild(card);
-          });
+          }
         }
       } catch (e) {
         console.error('Error fetching movies:', e);
@@ -1686,9 +1442,7 @@
 
     function closeHeroModal() {
       document.getElementById('hero-backdrop').style.display = 'none';
-      if (document.getElementById('search-modal').style.display !== 'flex') {
-        document.body.style.overflow = 'auto';
-      }
+      document.body.style.overflow = 'auto';
     }
 
     async function startWatching() {
@@ -1730,9 +1484,7 @@
 
     function closePlayer() {
       document.getElementById('watch-modal').style.display = 'none';
-      if (document.getElementById('search-modal').style.display !== 'flex') {
-        document.body.style.overflow = 'auto';
-      }
+      document.body.style.overflow = 'auto';
       document.getElementById('stream-iframe').src = '';
     }
 
