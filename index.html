@@ -1170,7 +1170,7 @@
       { name: "Romance Anime", type: "tv", endpoint: "discover/tv", params: "&with_genres=16,10749&with_origin_country=JP&sort_by=popularity.desc" }
     ];
 
-    const ANILIST_POSTER_API = id => `https://ani.pm/api/hen/k7/img?u=${id}`;
+    const ANILIST_POSTER_API = id => `https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/${id}`;
 
     /* Image Fallback System */
     function getInitialLetterPlaceholder(title, isBanner = false) {
