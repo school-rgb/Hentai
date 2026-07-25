@@ -1,1 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anime Eye Importer — Neon UI</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" integrity="" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <h1 class="logo">Kitsune • Eye Lab</h1>
+      <p class="subtitle">Import eyes from MP4s and place them on the poster</p>
+    </header>
+
+    <section class="controls">
+      <div class="card">
+        <h2>Assets</h2>
+        <label class="drop">
+          <span>Poster (PNG/JPG)</span>
+          <input id="posterInput" type="file" accept="image/*">
+        </label>
+        <label class="drop">
+          <span>Video (MP4)</span>
+          <input id="videoInput" type="file" accept="video/*">
+        </label>
+        <div class="hint">Drag & drop supported files onto the inputs</div>
+      </div>
+
+      <div class="card">
+        <h2>Frame & Crop</h2>
+        <div class="video-area">
+          <video id="video" controls crossorigin="anonymous"></video>
+          <input id="seek" type="range" min="0" max="100" value="0">
+        </div>
+
+        <div class="capture-controls">
+          <button id="captureBtn" class="btn neon">Capture Frame</button>
+          <button id="autoDetectBtn" class="btn" title="Experimental">Auto-detect eyes (experimental)</button>
+        </div>
+
+        <div class="crop-area">
+          <img id="frameImage" alt="Captured frame" style="max-width:100%; display:none;">
+          <div id="cropActions" class="crop-actions" style="display:none;">
+            <button id="saveCropBtn" class="btn neon">Save Eye</button>
+            <button id="resetCropBtn" class="btn">Reset</button>
+            <label class="small">
+              Aspect:
+              <select id="aspectSelect">
+                <option value="free">Free</option>
+                <option value="1">1:1</option>
+                <option value="2">2:1</option>
+                <option value="0.5">1:2</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Gallery</h2>
+        <div id="gallery" class="gallery"></div>
+      </div>
+    </section>
+
+    <section class="poster-section">
+      <div class="poster-card">
+        <h2>Poster Canvas</h2>
+        <div id="posterWrap" class="poster-wrap">
+          <img id="posterImg" alt="Poster" draggable="false">
+        </div>
+        <div class="poster-hint">Drop saved eyes onto the poster, drag to reposition, use corners to resize.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Built with ♥ — Cropper.js used for cropping. Experimental auto-detect is left as an integration point.</small>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
